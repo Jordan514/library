@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer,
+#header {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: azure;
+}
+
+#footer {
+}
+
+#page-container {
+  flex: 1 1 0;
+}
+
+#book-form {
+  display: grid;
+  grid-template: 1fr 1fr / repeat(3, 1fr);
+  border: solid black 1px;
+}
+
+#book-form :nth-child(10n + 2) {
+  grid-column: 2 / 1;
+}
+#book-form :nth-child(10n + 3) {
+  grid-area: 1/ 2 / span 1 / span 1;
+}
+
+#book-form button {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+}
+
+#book-grid {
+  display: grid;
+  grid-template: repeat(auto-fit, 200px) / repeat(auto-fit, 100px);
+  grid-auto-flow: 200px / 100px;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.book {
+  display: grid;
+  grid-template: 1fr 4fr 1fr 1fr/ 1fr 1fr;
+  background-color: lightgrey;
+  min-height: 200px;
+}
+
+.book > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: 500;
+  grid-column: span 2;
+}
+
+.author {
+  grid-column: span 2;
+  align-items: flex-start;
+}
+
+.book button {
+  grid-column: span 2;
+  border-radius: 50px;
+  border: none;
+}
